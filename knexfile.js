@@ -14,7 +14,7 @@ module.exports = {
     // sqlite will not enforce foreign keys by default
     pool: {
       afterCreate: (conn, done) => {
-        conn.run("PRAGMA foreign_keys = ON"); // turns on the foreign key enforcement
+        conn.run("PRAGMA foreign_keys = ON", done); // turns on the foreign key enforcement
       }
     }
   }
